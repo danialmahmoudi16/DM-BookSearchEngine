@@ -10,7 +10,7 @@ const resolvers = {
                 return User.findOne({_id: context.user._id})
             }
             throw new AuthenticationError('You need to be logged in!');
-        },
+        }
     },
     Mutation: {
         // create a user
@@ -39,12 +39,11 @@ const resolvers = {
         // save a book
         saveBook: async (parent, { input }, context) => {
             if(context.user) {
-                const savedBook = await User.findOneAndUpdate(
+                return User.findOneAndUpdate(
                     {_id: context.user._id},
                     {$addToSet: { savedBooks: input }},
                     {new: true}
                 ); 
-                return savedBook;
             }
             throw new AuthenticationError('You need to be logged in!');
         },

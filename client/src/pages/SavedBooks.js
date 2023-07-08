@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   Container,
   Card,
@@ -18,7 +18,7 @@ import { useQuery, useMutation } from '@apollo/client';
 const SavedBooks = () => {
   const { loading, data, refetch } = useQuery(GET_ME);
   const userData = data?.me || {};
-  const [removeBook, { error }] = useMutation(REMOVE_BOOK);
+  const [removeBook] = useMutation(REMOVE_BOOK);
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
