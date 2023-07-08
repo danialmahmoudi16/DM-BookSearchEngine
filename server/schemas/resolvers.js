@@ -14,14 +14,14 @@ const resolvers = {
     },
     Mutation: {
         // create a user
-        addUser: async (parent, {username, email, password}) => {
-            const user = await User.create({username, email, password});
+        addUser: async (parent, { username, email, password }) => {
+            const user = await User.create({ username, email, password });
             const token = signToken(user);
             return {token, user};
         },
         // login a user
         login: async (parent, {email, password}) => {
-            const user = await User.findOne({email});
+            const user = await User.findOne({ email });
 
             if(!user) {
                 throw new AuthenticationError('No user found with this email address');
