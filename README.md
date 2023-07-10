@@ -18,6 +18,8 @@ Install the appropriate version of Apollo Server 3 using the following script be
 
 Please see the walkthrough video here: https://drive.google.com/file/d/1xITi7gD8MGU4ZiMZs5Yit3wGiMna59zg/view
 
+Deployed Heroku Application: https://dm-booksearchapi-d84cbd511308.herokuapp.com/
+
 ## Tests
 
 Run npm run develop in the terminal command line to view and update your saved books as necessary!
